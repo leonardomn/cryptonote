@@ -91,7 +91,7 @@ docker build --build-arg THREADS=16 -t uhc .
 * Then you can type start_mining <wallet_address> <number-of-threads>
 ```
 E.g.: start_mining hackeyNbPcHahhyNyrwrbUMonruLGWb1UZzJ2uvLDvb5dvRHBHxeaVj1jCHjEfhCBK8ukoE2enoXa5YAopgaBeBz5QNPJvu2EW 16
-
+```
 ### Binaries in this project
 Short description describing what is the binary, for more information of how to use always run the binary with --help
 
