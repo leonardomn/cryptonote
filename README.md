@@ -71,8 +71,29 @@ Inside the docker you will find all binaries inside /root
 Your wallet could mine from the docker container, and after some minutes or hours depending on your computer configuration, you will see your balance when typing balance. If you have any friend using UHC, you will be able to transfer
 your amount of coins to his wallet too. You can have some fun!
 
-Note: Always save your wallet when done with your work using container, if you delete the container you will delete the wallet. You can mount a local directory and save it from there preventing to lose the file. 
+Note: Always save your wallet when done with your work using container, if you delete the container you will delete the wallet. You can mount a local directory and save it from there preventing to lose the file.
 
+### Building own Docker Image
+You can build your own container image if you prefer not to use the one in dockerhub.
+
+To build the docker image you can either do it with BuildKit:
+```
+docker buildx build --platform linux/amd64 --build-arg THREADS=16 -t uhc .
+```
+or with default docker builder:
+```
+docker build --build-arg THREADS=16 -t uhc .
+```
+
+* All binaries can be found inside /opt/uhc
+* THREADS is the arg for paralellism during build time. If not specified, 1 will be used
+* After starting the container, you will have to wait for it to finish synchronizing
+* Then you can type start_mining wallet_address number-of-threads
+
+E.g.:
+```
+start_mining hackeyNbPcHahhyNyrwrbUMonruLGWb1UZzJ2uvLDvb5dvRHBHxeaVj1jCHjEfhCBK8ukoE2enoXa5YAopgaBeBz5QNPJvu2EW 16
+```
 ### Binaries in this project
 Short description describing what is the binary, for more information of how to use always run the binary with --help
 
