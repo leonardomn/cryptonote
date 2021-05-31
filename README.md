@@ -2,6 +2,14 @@
 UHC is a PoW (Proof of Work) coin. Each server node or user could use that as they want. The intent of this coin is to provide
 I.T professionals around the globe to receive and send coins when working to someone. At same time, this coin is to give us, I.T professionals something nice to do.
 
+Money Supply: 1,000,000,000 coins
+
+Charts
+
+Emission             |  Coins per Block
+:-------------------------:|:-------------------------:
+![Emission](./imgs/emission.png)  |  ![Coins per Block](./imgs/coinsperblock.png)
+
 ## How to start?
 
 ### Preparation to be a seed node
