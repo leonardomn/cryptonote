@@ -16,7 +16,7 @@ Emission             |  Coins per Block
 When building the seed node, you will have all binaries, and you will be able to use the full capabilities coming from UHC 
 
 1. Create an account on [GitHub.com](github.com)
-2. Fork [UHC repository](https://github.com/leonardomn/uhc)
+2. Fork [UHC repository](https://github.com/ultimatehackingcoin/uhc)
 3. Buy one or two Ubuntu-based (14.04) dedicated servers (at least 2Gb of RAM) for seed nodes. 
 4. Edit the file src/CryptoNoteConfig.H adding your servers on line 108. like: "server_ip:42000"
 5. Push the PR with the New Servers and Build your Code following the steps below
@@ -65,23 +65,38 @@ Dependencies: Docker
 
 * https://www.docker.com
 
-To run docker container you will need to:
+To run docker container you will need to (this option will allow you to open the binaries, create wallet, transfer and more...) :
 ```
-docker run -it leonardomn/uhc
+docker run -it ultimatehackingcoin/uhc
 ```
 
 Inside the docker you will find all binaries inside /root
 
 * Run ./simplewallet
 * Generate your Wallet
-* Run start_mining
+* Run ./uhcd
+* Wait to sync
+* Run: start_mining your_wallet_address
 
 Your wallet could mine from the docker container, and after some minutes or hours depending on your computer configuration, you will see your balance when typing balance. If you have any friend using UHC, you will be able to transfer
 your amount of coins to his wallet too. You can have some fun!
 
 Note: Always save your wallet when done with your work using container, if you delete the container you will delete the wallet. You can mount a local directory and save it from there preventing to lose the file.
 
-### Building own Docker Image
+
+### Seed Node with Docker Container
+You can run the UHC seed node from a container, the container will come with a full version of all binaries, and it should run with a single command.
+
+Dependencies: Docker
+
+* https://www.docker.com
+
+To run docker container you will need to:
+```
+docker run -it ultimatehackingcoin/uhc-seed-node
+```
+
+### Building own Docker Image (SEED NODE)
 You can build your own container image if you prefer not to use the one in dockerhub.
 
 To build the docker image you can either do it with BuildKit:
